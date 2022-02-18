@@ -1,27 +1,23 @@
 
 
+var userSelection = document.querySelector('Select');
+userSelection.addEventListener("change", printPyramid);
 
+var inputHeight = document.getElementById("height");
+inputHeight.addEventListener("input", printPyramid);
 
 function printPyramid() {
     
     var inputValue = document.getElementById("height").value;
     x = parseInt(inputValue);
-
-    return drawPyramid(x);
-
-    
+    return drawPyramid(x);  
 
 }
-
-
-var button = document.querySelector('button');
-button.addEventListener("click", printPyramid);
 
  function drawPyramid(height) {    
 
 	  var symbolInput = document.getElementById("symbols").value;
-console.log(symbolInput);
-let brick = symbolInput;
+		let brick = symbolInput;
     
     // removes existing pyramid
     var pyramidDiv = document.getElementById("pyramid");
@@ -52,5 +48,12 @@ let brick = symbolInput;
 
 
         document.getElementById("pyramid").appendChild(rowElem);
+
+			
+				var inputRange = document.getElementById("height").value;
+
+				document.getElementById("sliderValue").innerHTML = inputRange;
+			
     }
 }
+
