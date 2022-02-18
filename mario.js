@@ -49,10 +49,7 @@ function printPyramid() {
 
         document.getElementById("pyramid").appendChild(rowElem);
 
-			
-				var inputRange = document.getElementById("height").value;
-
-				document.getElementById("sliderValue").innerHTML = inputRange;
+				document.getElementById("sliderValue").innerHTML = height;
 			
     }
 }
