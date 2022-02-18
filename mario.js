@@ -1,4 +1,7 @@
 
+
+
+
 function printPyramid() {
     
     var inputValue = document.getElementById("height").value;
@@ -14,8 +17,11 @@ function printPyramid() {
 var button = document.querySelector('button');
 button.addEventListener("click", printPyramid);
 
- function drawPyramid(height) {
-    
+ function drawPyramid(height) {    
+
+	  var symbolInput = document.getElementById("symbols").value;
+console.log(symbolInput);
+let brick = symbolInput;
     
     // removes existing pyramid
     var pyramidDiv = document.getElementById("pyramid");
@@ -35,7 +41,7 @@ button.addEventListener("click", printPyramid);
             rowStr += ".";
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += brick;
 
         }
 
