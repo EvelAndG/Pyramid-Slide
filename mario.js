@@ -21,6 +21,11 @@ formElem.onsubmit = function(event) {
     // if they didn't type anything at all, give a different error message,
     // something like "Please provide a height"
 
+		if ( height <= 0) {
+			displayError("Enter a positive number");
+			return;
+		}
+
 
     // convert the string to an int
     height = parseInt(heightStr);
@@ -29,7 +34,7 @@ formElem.onsubmit = function(event) {
     // TODO 2
     // negative numbers and zero should also be rejected here
     if (isNaN(height)) {
-        displayError("That's not a valid height.");
+        displayError("Please enter a number");
         return;
     }
 
@@ -64,6 +69,7 @@ function displayError(message) {
 function clearError(message) {
     // TODO 3
     // implement this function.
+	document.querySelector(".error-message").innerHTML = "";
 }
 
 
