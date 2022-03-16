@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="style.css">
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+
+        .invalid-field {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
-<body >
-	<div id="title">
-    <h1>Pyramid Slide</h1>
-	</div>
-    
-		<div id="slideBox">			
-		<select name="symbols" id="symbols">
-			<option value="#">#</option>
-			<option value="@">@</option>
-			<option value="X">X</option>
-			<option value="$">$</option>					
-		</select>
+<body>
+    <h1>Mario 4</h1>
 
-		<label>&emsp;	How high?</label>
-    <input type="range" id="height" min="2" max="20" />
-			
-		<label id="sliderValue"></label>			
-		</div>
+    <p>When you say</p>
+    <p><strong>Draw a pyramid</strong></p>
+    <p>I say:</p>
+    <br>
 
-    <div id="pyramid">
-		</div>
+    <form id="draw-form">
+        <label>
+            How high?
+            <input type="text" id="height"/>
+            <label class="error-message">
+                <!-- If there was a user error, we will put a message in here -->
+            </label>
+        </label>
+        <br><br>
+        <input type="submit" value="Draw a pyramid"/>
+    </form>
+
+    <br><br>
+
+    <div id="pyramid"></div>
 
     <script src="mario.js"></script>
 </body>
